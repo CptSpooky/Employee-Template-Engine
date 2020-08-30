@@ -76,7 +76,9 @@ async function init() {
 
     }
 
+    
     const out = render(employees);
+    writeToFile("./output/team.html", out);
     console.log(out);
 
     //system.log("check");
@@ -94,6 +96,18 @@ init();
 // `output` folder. You can use the variable `outputPath` above target this location.
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
+
+
+// function to write to html file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>{ 
+        if (err) {
+            return console.log(err);
+        }
+
+        console.log("success!");
+    });
+}
 
 // HINT: each employee type (manager, engineer, or intern) has slightly different
 // information; write your code to ask different questions via inquirer depending on
