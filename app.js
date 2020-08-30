@@ -36,6 +36,7 @@ const questions = [
     }
 ];
 
+// if user selects number, create new class
 function employeeFactory(name, id, email, roleID) {
     switch (roleID) {
         case 1: return new Manager(name, id, email, "");
@@ -61,14 +62,14 @@ async function init() {
             } catch (err) { }
         });
 
-        await inquirer.prompt([{type:"input",message:"would you like(y/n)?",name:"resp"}]).then(data => {
+        await inquirer.prompt([{type:"input",message:"Would you like to add another Employee? (y/n)?",name:"resp"}]).then(data => {
             entering = data.resp == "y";
         });
 
     }
 
     const out = render(employees);
-    writeToFile("./output/team.html", out);
+    writeToFile(outputPath, out);
 
 }
 

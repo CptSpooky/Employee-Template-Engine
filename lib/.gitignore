@@ -1,4 +1,4 @@
-/node_modules
+node_modules
 .DS_Store
 /lib/._Employee.js
 /lib/._Engineer.js
@@ -19,3 +19,4 @@
 ._package.json
 ._package-lock.json
 ._README.md
+/output/._style.css
